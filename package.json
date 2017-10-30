@@ -1,0 +1,23 @@
+{
+  "name": "akshay",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "botbuilder": "^3.11.0",
+    "directline-api": "^1.1.1",
+    "express": "^4.16.2",
+    "npm": "^3.10.10",
+    "request": "^2.83.0",
+    "superagent": "^3.6.3",
+    "unirest": "^0.5.1"
+  },
+  "devDependencies": {
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node app_traffic.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
