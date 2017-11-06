@@ -56,15 +56,22 @@ var bot = new builder.UniversalBot(connector, [
 
 			} else {
 			var response = res.body;
+			var status = response.status;
+			var message = response.message;
 			var ticket = response.ticket;
 			var ticketId = ticket.id;
 			var date = ticket.date;
 			var category = ticket.ticketCategory;
 			var originIP = category.originIP;
 			var destinationIP = category.destIP;
-			
-			
-					session.send("Ticket details are as follows: "+"<br/>ticket ID: "+ticketId+"<br/>Date: "+date+"<br/>Origin IP: "+originIP+"<br/>Destination IP: "+destinationIP+"<br/>Thank you for using the service");
+			var desc = ticket.desc;
+			var contact = ticket.contact;
+			var name = contact.name;
+			var mobile = contact.mobile;
+			var email = contact.email;
+			var block = ticket.note;
+			var text1 = block[0].text;
+					session.send("Ticket details are as follows: "+"<br/>status: "+status+"<br/>message: "+message+"<br/>ticket ID: "+ticketId+"<br/>Description: "+desc+"<br/>Contact: "+"<br/>name: "+name+"<br/>email: "+email+"<br/>phone: "+mobile+"<br/>Date: "+date+"<br/>Origin IP:"+originIP+"<br/>Destination IP: "+destinationIP+"<br/>Notes: "+text1+"<br/>Thank you for using the service");
 					session.endDialog();
 					}
 					});
