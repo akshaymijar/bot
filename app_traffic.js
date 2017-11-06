@@ -52,18 +52,20 @@ var bot = new builder.UniversalBot(connector, [
 			.end(function(err, res){
 			if (err || !res.ok) {
 			session.send('Oh no! error. Please try again!');
+			
+		
 			session.endDialog();
 
 			} else {
 			var response = JSON.parse(res.body);
 			var status = response.status;
 			var message = response.message;
-			var ticket = response.ticket;
+			/*var ticket = response.ticket;
 			var ticketId = ticket.id;
 			var date = ticket.date;
 			var category = response.ticketCategory;
 			var originIP = category.originIP;
-			var destinationIP = category.destIP;
+			var destinationIP = category.destIP;*/
 			
 			
 					session.send("Ticket details are as follows: "+"<br/>Status: "+status+"<br/>message: "+message+"<br/>ticket ID: "+ticketId+"<br/>Date: "+date+"<br/>Origin IP:"+OriginIP+"<br/>Destination IP: "+destinationIP+"<br/>Thank you for using the service");
