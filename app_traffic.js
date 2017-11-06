@@ -59,7 +59,7 @@ var bot = new builder.UniversalBot(connector, [
 			var ticket = response.ticket;
 			var ticketId = ticket.id;
 			var date = ticket.date;
-			var category = response.ticketCategory;
+			var category = ticket.ticketCategory;
 			var originIP = category.originIP;
 			var destinationIP = category.destIP;
 			
