@@ -52,14 +52,10 @@ var bot = new builder.UniversalBot(connector, [
 			.end(function(err, res){
 			if (err || !res.ok) {
 			session.send('Oh no! error. Please try again!');
-			
-		
 			session.endDialog();
 
 			} else {
 			var response = res.body;
-			var status = response.status;
-			var message = response.message;
 			var ticket = response.ticket;
 			var ticketId = ticket.id;
 			var date = ticket.date;
