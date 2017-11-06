@@ -22,7 +22,7 @@ var bot = new builder.UniversalBot(connector, [
     
     function (session) {
         session.send("Welcome to the trouble ticket service");
-	   builder.Prompts.choice(session, "please select the the service you wish to call", "Create Ticket|Get Ticket", { listStyle: builder.ListStyle.button });
+	   builder.Prompts.choice(session, "please select the the service you wish to call", "Create Ticket|Get Ticket Details", { listStyle: builder.ListStyle.button });
     },
 	function (session, results) {
         session.dialogData.choice1 = results.response;
@@ -55,10 +55,18 @@ var bot = new builder.UniversalBot(connector, [
 			session.endDialog();
 
 			} else {
-			var response = JSON.stringify(res.body);
+			var response = JSON.parse(res.body);
+			var status = response.status;
+			var message = response.message;
+			var ticket = response.ticket;
+			var ticketId = ticket.id;
+			var date = ticket.date;
+			var category = response.ticketCategory;
+			var originIP = category.originIP;
+			var destinationIP = category.destIP;
 			
 			
-					session.send("Ticket details are as follows  "+response+"  "+"<br/>Thank you for using the service");
+					session.send("Ticket details are as follows: "+"<br/>Status: "+status+"<br/>message: "+message+"<br/>ticket ID: "+ticketId+"<br/>Date: "+date+"<br/>Origin IP:"+OriginIP+"<br/>Destination IP: "+destinationIP+"<br/>Thank you for using the service");
 					session.endDialog();
 					}
 					});
