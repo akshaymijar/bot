@@ -64,7 +64,7 @@ var bot = new builder.UniversalBot(connector, [
 			var destinationIP = category.destIP;
 			
 			
-					session.send("Ticket details are as follows: "+"<br/>Status: "+status+"<br/>message: "+message+"<br/>ticket ID: "+ticketId+"<br/>Date: "+date+"<br/>Origin IP:"+OriginIP+"<br/>Destination IP: "+destinationIP+"<br/>Thank you for using the service");
+					session.send("Ticket details are as follows: "+"<br/>ticket ID: "+ticketId+"<br/>Date: "+date+"<br/>Origin IP:"+originIP+"<br/>Destination IP: "+destinationIP+"<br/>Thank you for using the service");
 					session.endDialog();
 					}
 					});
